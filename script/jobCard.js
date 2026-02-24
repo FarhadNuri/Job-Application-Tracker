@@ -41,10 +41,19 @@ function createJobCard(job) {
   detailsDiv.appendChild(details);
 
   const statusDiv = document.createElement("div");
-
-  statusDiv.className =
-    "bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1 rounded inline-block mb-4";
-  statusDiv.innerText = "NOT APPLIED";
+  if (job.status === "interview") {
+    statusDiv.className =
+      "bg-teal-50 text-teal-700 text-xs font-semibold px-3 py-1 rounded inline-block mb-4";
+    statusDiv.innerText = "INTERVIEW";
+  } else if (job.status === "rejected") {
+    statusDiv.className =
+      "bg-red-50 text-red-700 text-xs font-semibold px-3 py-1 rounded inline-block mb-4";
+    statusDiv.innerText = "REJECTED";
+  } else {
+    statusDiv.className =
+      "bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1 rounded inline-block mb-4";
+    statusDiv.innerText = "NOT APPLIED";
+  }
 
   const description = document.createElement("p");
   description.className = "text-gray-700 text-sm mb-6";
@@ -62,6 +71,9 @@ function createJobCard(job) {
       "border-2 border-teal-500 text-teal-500 px-2 py-1 rounded font-medium text-xs transition hover:bg-teal-50";
   }
   interviewBtn.innerText = "INTERVIEW";
+  interviewBtn.addEventListener("click", function () {
+    changeJobStatus(job.id, "interview");
+  });
 
   const rejectedBtn = document.createElement("button");
   if (job.status === "rejected") {
@@ -72,7 +84,9 @@ function createJobCard(job) {
       "border-2 border-red-500 text-red-500 px-2 py-1 rounded font-medium text-xs transition hover:bg-red-50";
   }
   rejectedBtn.innerText = "REJECTED";
-
+  rejectedBtn.addEventListener("click", function () {
+    changeJobStatus(job.id, "rejected");
+  });
 
   buttonsDiv.appendChild(interviewBtn);
   buttonsDiv.appendChild(rejectedBtn);

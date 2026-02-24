@@ -12,9 +12,16 @@ function showAllJobs() {
     if (job.status === "all") {
       const jobCard = createJobCard(job);
       allContainer.appendChild(jobCard);
+    } else if (job.status === "interview") {
+      const jobCard = createJobCard(job);
+      interviewContainer.appendChild(jobCard);
+    } else if (job.status === "rejected") {
+      const jobCard = createJobCard(job);
+      rejectedContainer.appendChild(jobCard);
     }
   }
   showHideEmptyMessages();
+  
 }
 
 function showHideEmptyMessages() {
