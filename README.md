@@ -23,6 +23,20 @@ headingTag.textContent = "Hello World";
 document.body.append(headingTag);
 ```
 
-document.createElement("h1") = Creates a new <h1> element
-headingTag.textContent = "Hello World" = Adds text inside the <h1>.
-document.body.append(headingTag) = Adds the <h1> inside the <body>.
+document.createElement("h1"); = Creates a new <h1> element.
+headingTag.textContent; = "Hello World" = Adds text inside the <h1>.
+document.body.append(headingTag); = Adds the <h1> inside the <body>.
+
+### Answer to Question 3
+Event Bubbling means when we click on child element, the event also goes to its parent automatically. It moves from child to parent, then to the body, then to the document. Like bubble going up. First child runs, then parent runs. If we click a <button> inside a <div>, the browser triggers the click handler on the button first, then goes to the <div>, then moves to the <body>.
+
+### Answer to Question 4
+Event Delegation means adding event listener to parent instead of adding to many child elements. Parent handles the event using bubbling. It is useful because less code, better performance, and works for dynamic elements also. Instead of adding an event listener to 100 individual list items (<li>), we can add one listener to the parent (<ul>).
+
+
+### Answer to Question 5
+preventDefault() = Stops the default browser action like form submit or link redirect.
+If we click a <a> link, normally the browser will open the link. But if we use preventDefault(), it will stop the link from opening.
+
+stopPropagation() = Stops the event from moving to parent element. It stops bubbling.
+If we click a <button> inside a <div>, normally the event goes to the button first, then the div. But if we use stopPropagation(), it will stop at the button.

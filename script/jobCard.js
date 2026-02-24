@@ -23,7 +23,7 @@ function createJobCard(job) {
   const deleteBtn = document.createElement("button");
   deleteBtn.className = "delete-btn text-gray-400 hover:text-red-500";
   deleteBtn.innerHTML =
-    '<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>';
+    '<svg class="w-5 h-5 cursor-pointer" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>';
   deleteBtn.addEventListener("click", function () {
     deleteJob(job.id);
   });
@@ -65,10 +65,10 @@ function createJobCard(job) {
   const interviewBtn = document.createElement("button");
   if (job.status === "interview") {
     interviewBtn.className =
-      "border-2 border-teal-500 bg-teal-500 text-white px-2 py-1 rounded font-medium text-xs transition hover:bg-teal-600";
+      " cursor-pointer border-2 border-teal-500 bg-teal-500 text-white px-2 py-1 rounded font-medium text-xs transition hover:bg-teal-600";
   } else {
     interviewBtn.className =
-      "border-2 border-teal-500 text-teal-500 px-2 py-1 rounded font-medium text-xs transition hover:bg-teal-50";
+      "cursor-pointer border-2 border-teal-500 text-teal-500 px-2 py-1 rounded font-medium text-xs transition hover:bg-teal-50";
   }
   interviewBtn.innerText = "INTERVIEW";
   interviewBtn.addEventListener("click", function () {
@@ -78,10 +78,10 @@ function createJobCard(job) {
   const rejectedBtn = document.createElement("button");
   if (job.status === "rejected") {
     rejectedBtn.className =
-      "border-2 border-red-500 bg-red-500 text-white px-2 py-1 rounded font-medium text-xs transition hover:bg-red-600";
+      "cursor-pointer border-2 border-red-500 bg-red-500 text-white px-2 py-1 rounded font-medium text-xs transition hover:bg-red-600";
   } else {
     rejectedBtn.className =
-      "border-2 border-red-500 text-red-500 px-2 py-1 rounded font-medium text-xs transition hover:bg-red-50";
+      "cursor-pointer border-2 border-red-500 text-red-500 px-2 py-1 rounded font-medium text-xs transition hover:bg-red-50";
   }
   rejectedBtn.innerText = "REJECTED";
   rejectedBtn.addEventListener("click", function () {
