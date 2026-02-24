@@ -10,6 +10,6 @@ function changeJobStatus(jobId, newStatus) {
         }
     }
     showAllJobs();
-    
+    updateDashboardCounts();
 }
 

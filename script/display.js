@@ -21,7 +21,7 @@ function showAllJobs() {
     }
   }
   showHideEmptyMessages();
-  
+  updateJobsCountInHeader();
 }
 
 function showHideEmptyMessages() {

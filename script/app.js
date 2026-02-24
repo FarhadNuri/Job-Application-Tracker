@@ -1,2 +1,3 @@
 showAllJobs();
+updateDashboardCounts();
 setupTabButtons();
