@@ -48,5 +48,5 @@ function switchToTab(tabName) {
   } else if (tabName === "rejected") {
     rejectedTab.classList.remove("hidden");
   }
-  
+  updateJobsCountInHeader();
 }
