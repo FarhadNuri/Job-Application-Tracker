@@ -13,3 +13,14 @@ function changeJobStatus(jobId, newStatus) {
     updateDashboardCounts();
 }
 
+function deleteJob(jobId) {
+    const newJobs = [];
+    for (let i = 0; i < jobs.length; i++) {
+        if (jobs[i].id !== jobId) {
+            newJobs.push(jobs[i]);
+        }
+    }
+    jobs = newJobs;
+    showAllJobs();
+    updateDashboardCounts();
+}
